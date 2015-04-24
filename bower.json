@@ -1,0 +1,32 @@
+{
+  "name": "wenzhixin-multiple-select-angular",
+  "version": "0.1.0",
+  "homepage": "https://github.com/epicleptico/wenzhixin-multiple-select-angular",
+  "authors": [
+    "epicleptico <alfixos@gmail.com>"
+  ],
+  "description": "Plugin that will use https://github.com/wenzhixin/multiple-select selects into angular",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "multiple",
+    "select",
+    "angular",
+    "wenzhixin"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "multiple-select": "~1.1.0",
+    "jquery": "~2.1.3",
+    "bootstrap": "~3.3.4",
+    "angularjs": "~1.3.13"
+  }
+}

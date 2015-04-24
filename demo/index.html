@@ -1,0 +1,124 @@
+<html ng-app="mainApp">
+<head>
+    <title>Multi select tests</title>
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="../lib/multiple-select/multiple-select.css"/>
+    <style>
+        pre{height:200px; overflow-y:scroll;}
+    </style>
+</head>
+<body ng-controller="mainApp">
+<div class="container">
+
+
+    <div class="page-header">
+        <h1>{{title}}</h1>
+    </div>
+    <div class="page-header">
+        <input type="text" ng-model="newMonth" >
+        <input type="button" class="btn btn-info" value="add new" ng-click="addNewMonth(newMonth); newMonth = '';" />
+    </div>
+
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-2">
+            <form>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="multiSelectCountries1">Countries: selecting objects (Without filter)</label>
+                            <select id="multiSelectCountries1" class="form-control"
+                                    ng-model="countries1"
+                                    ng-options="item as item.name for item in countries track by item.id"
+                                    ng-multi-select
+                                    ng-multi-select-track="countries"
+                                    ng-multi-select-filter="false"
+                                    multiple="multiple"
+                                    >
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" >
+                        <pre>{{ countries1 | json}}</pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="multiSelectCountries2">Countries: selecting just object id (Single selection)</label>
+                            <select id="multiSelectCountries2" class="form-control"
+                                    ng-model="countries2"
+                                    ng-options="item.id as item.name for item in countries"
+                                    ng-multi-select
+                                    ng-multi-select-track="countries"
+                                    ng-multi-select-single="true"
+                                    multiple="multiple"
+                                    >
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" >
+                        <pre>{{ countries2 | json}}</pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="multiSelectCountries3">Countries: with some objects selected</label>
+                            <select id="multiSelectCountries3" class="form-control"
+                                    ng-model="countries3"
+                                    ng-options="item as item.name for item in countries track by item.id"
+                                    ng-multi-select
+                                    ng-multi-select-track="countries"
+                                    multiple="multiple"
+                                    >
+                                <option value="">-- Select an option --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" >
+                        <pre>{{ countries3 | json}}</pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
+                            <label for="multiSelectCountries4">Countries: with some id's selected</label>
+                            <select id="multiSelectCountries4" class="form-control"
+                                    ng-model="countries4"
+                                    ng-options="item.id as item.name for item in countries"
+                                    ng-multi-select
+                                    ng-multi-select-track="countries"
+                                    multiple="multiple"
+                                    >
+                                <option value="">-- Select an option --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" >
+                        <pre>{{ countries4 | json}}</pre>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<script type="text/javascript" src="../lib/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../lib/multiple-select/jquery.multiple.select.js"></script>
+<script type="text/javascript" src="../lib/angularjs/angular.min.js"></script>
+<script type="text/javascript" src="../src/directive.multi-select.js"></script>
+
+<script type="text/javascript" src="countries.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
