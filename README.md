@@ -1,6 +1,8 @@
 # wenzhixin-multiple-select-angular
 
-This is just an angular implementation for wenzhixin/multiple-select repository usage
+[![Bower version](https://badge.fury.io/bo/wenzhixin-multiple-select-angular.svg)](http://badge.fury.io/bo/wenzhixin-multiple-select-angular)
+
+This is just an angular implementation for [wenzhixin/multiple-select](https://github.com/wenzhixin/multiple-select) repository usage
 
 
 Quick example
