@@ -1,6 +1,6 @@
 # wenzhixin-multiple-select-angular
 
-This is just an angular implementation for wenzhixin/multiple-select repository usage
+This is just an angular implementation for [wenzhixin/multiple-select](https://github.com/wenzhixin/multiple-select) repository usage
 
 
 Quick example
