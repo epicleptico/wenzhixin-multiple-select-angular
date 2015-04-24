@@ -24,10 +24,10 @@
         single: false
       };
 
-      if(iAttrs.ngMultiSelectFilter) { opts.filter = iAttrs.ngMultiSelectFilter === 'true';       }
+      if(iAttrs.ngMultiSelectFilter) { opts.filter = iAttrs.ngMultiSelectFilter === 'true'; }
       if(iAttrs.ngMultiSelectSingle) { opts.single = iAttrs.ngMultiSelectSingle === 'true'; }
       if(iAttrs.ngMultiSelectWidth) { opts.width = iAttrs.ngMultiSelectWidth; }
-      if(iAttrs.ngMultiSelectMaxHeight) { opts.maxHeight = iAttrs. ngMultiSelectMaxHeight; }
+      if(iAttrs.ngMultiSelectMaxHeight) { opts.maxHeight = iAttrs.ngMultiSelectMaxHeight; }
 
       jElement.multipleSelect(opts);
 
