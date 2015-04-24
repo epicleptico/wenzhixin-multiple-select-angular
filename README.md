@@ -17,3 +17,8 @@ Quick example
                                     >
                             </select>
 ```
+
+Example
+-------
+
+[plunkr](http://plnkr.co/edit/e9vuq5yW5to2Em0EX3Fa?p=preview)
