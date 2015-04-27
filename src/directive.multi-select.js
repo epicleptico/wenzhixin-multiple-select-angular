@@ -46,6 +46,9 @@
       function refreshMultipleSelect(){
         jElement.multipleSelect('refresh');
       }
+
+      //This helps setting up the value on init
+      $timeout(refreshMultipleSelect, 50);
     }
 
     return {
