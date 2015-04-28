@@ -17,11 +17,11 @@
       var jElement = jQuery(iElement);
 
       var opts = {
-        filter: true,
-        onCheckAll: triggerChange,
-        single: false,
         onClick: triggerChange,
+        onCheckAll: triggerChange,
         onUncheckAll: triggerChange,
+        filter: true,
+        single: false,
         placeholder: '',
         selectAll: true,
         position: 'bottom',
