@@ -27,6 +27,29 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="form-group">
+                            <label for="multiSelectCountries1">Without ng-options and placeholder</label>
+                            <select id="multiSelectCountries1" class="form-control"
+                                    ng-model="noOptionsCountries1"
+                                    ng-multi-select
+                                    ng-multi-select-single="true"
+                                    multiple="multiple"
+                                    ng-multi-select-placeholder="this is a placeholder"
+                                    >
+                              <option value="AA" selected>AA</option>
+                              <option value="AB" >AB</option>
+                              <option value="AC" >AC</option>
+                              <option value="AD" >AD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" >
+                        <pre>{{ noOptionsCountries1 | json}}</pre>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="form-group">
                             <label for="multiSelectCountries1">Countries: selecting objects (Without filter)</label>
                             <select id="multiSelectCountries1" class="form-control"
                                     ng-model="countries1"
