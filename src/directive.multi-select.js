@@ -17,19 +17,27 @@
       var jElement = jQuery(iElement);
 
       var opts = {
-        onClick: triggerChange,
-        onCheckAll: triggerChange,
-        onUncheckAll: triggerChange,
         filter: true,
+        onCheckAll: triggerChange,
         single: false,
-        placeholder: ""
+        onClick: triggerChange,
+        onUncheckAll: triggerChange,
+        placeholder: '',
+        selectAll: true,
+        position: 'bottom',
+        keepOpen: false,
+        isOpen: false
       };
 
-      if(iAttrs.ngMultiSelectFilter) { opts.filter = iAttrs.ngMultiSelectFilter === 'true'; }
-      if(iAttrs.ngMultiSelectSingle) { opts.single = iAttrs.ngMultiSelectSingle === 'true'; }
-      if(iAttrs.ngMultiSelectWidth) { opts.width = iAttrs.ngMultiSelectWidth; }
-      if(iAttrs.ngMultiSelectMaxHeight) { opts.maxHeight = iAttrs.ngMultiSelectMaxHeight; }
+      if(iAttrs.ngMultiSelectFilter)      { opts.filter = iAttrs.ngMultiSelectFilter.toLowerCase() === 'true'; }
+      if(iAttrs.ngMultiSelectSingle)      { opts.single = iAttrs.ngMultiSelectSingle.toLowerCase() === 'true'; }
+      if(iAttrs.ngMultiSelectWidth)       { opts.width = iAttrs.ngMultiSelectWidth; }
+      if(iAttrs.ngMultiSelectMaxHeight)   { opts.maxHeight = iAttrs.ngMultiSelectMaxHeight; }
       if(iAttrs.ngMultiSelectPlaceholder) { opts.placeholder = iAttrs.ngMultiSelectPlaceholder; }
+      if(iAttrs.ngMultiSelectSelectAll)   { opts.selectAll = iAttrs.ngMultiSelectSelectAll.toLowerCase() === 'true'; }
+      if(iAttrs.ngMultiSelectPosition)    { opts.position = iAttrs.ngMultiSelectPosition; }
+      if(iAttrs.ngMultiSelectKeepOpen)    { opts.keepOpen = iAttrs.ngMultiSelectKeepOpen.toLowerCase() === 'true'; }
+      if(iAttrs.ngMultiSelectIsOpen)      { opts.isOpen = iAttrs.ngMultiSelectIsOpen.toLowerCase() === 'true'; }
       
       jElement.multipleSelect(opts);
 
