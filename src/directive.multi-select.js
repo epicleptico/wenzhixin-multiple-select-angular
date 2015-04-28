@@ -21,14 +21,16 @@
         onCheckAll: triggerChange,
         onUncheckAll: triggerChange,
         filter: true,
-        single: false
+        single: false,
+        placeholder: ""
       };
 
       if(iAttrs.ngMultiSelectFilter) { opts.filter = iAttrs.ngMultiSelectFilter === 'true'; }
       if(iAttrs.ngMultiSelectSingle) { opts.single = iAttrs.ngMultiSelectSingle === 'true'; }
       if(iAttrs.ngMultiSelectWidth) { opts.width = iAttrs.ngMultiSelectWidth; }
       if(iAttrs.ngMultiSelectMaxHeight) { opts.maxHeight = iAttrs.ngMultiSelectMaxHeight; }
-
+      if(iAttrs.ngMultiSelectPlaceholder) { opts.placeholder = iAttrs.ngMultiSelectPlaceholder; }
+      
       jElement.multipleSelect(opts);
 
 
