@@ -78,6 +78,7 @@ module.exports = function(grunt) {
   /* TASKS
    *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 
+  grunt.registerTask('build', ['jshint', 'uglify']);
   grunt.registerTask('release-patch', ['jshint', 'version:patch', 'uglify']);
   grunt.registerTask('release-minor', ['jshint', 'version:minor', 'uglify']);
 
