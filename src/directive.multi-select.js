@@ -27,7 +27,8 @@
         position: 'bottom',
         keepOpen: false,
         isOpen: false,
-        selectAllText: 'Select All'
+        selectAllText: 'Select all',
+        allSelected: 'All selected'
       };
 
       if(iAttrs.ngMultiSelectFilter)      { opts.filter = iAttrs.ngMultiSelectFilter.toLowerCase() === 'true'; }
@@ -40,6 +41,7 @@
       if(iAttrs.ngMultiSelectKeepOpen)    { opts.keepOpen = iAttrs.ngMultiSelectKeepOpen.toLowerCase() === 'true'; }
       if(iAttrs.ngMultiSelectIsOpen)      { opts.isOpen = iAttrs.ngMultiSelectIsOpen.toLowerCase() === 'true'; }
       if(iAttrs.ngMultiSelectSelectAllText)  { opts.selectAllText = iAttrs.ngMultiSelectSelectAllText; }
+      if(iAttrs.ngMultiSelectAllSelected) { opts.allSelected = iAttrs.ngMultiSelectAllSelected; }
 
       jElement.multipleSelect(opts);
 
