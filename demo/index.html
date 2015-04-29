@@ -6,6 +6,38 @@
     <link rel="stylesheet" href="../lib/multiple-select/multiple-select.css"/>
     <style>
         pre{height:200px; overflow-y:scroll;}
+        .mt20 { margin-top: 20px; }
+        .containerExample { padding: 30px 0px; }
+
+
+        /*
+         * Style options
+         */
+        .ms-parent {
+            width: 100% !important;
+        }
+        .ms-parent .ms-choice {
+            width: 100% !important;
+        }
+        .ms-parent .ms-drop {
+            width: 100% !important;
+        }
+        .ms-parent .ms-drop ul li {
+            position: relative;
+        }
+        .ms-parent .ms-drop ul li label {
+            padding-left: 25px;
+            min-height: 20px;
+        }
+        .ms-parent .ms-drop ul li label input[type="radio"],
+        .ms-parent .ms-drop ul li label input[type="checkbox"] {
+            position: absolute;
+            top: -3px;
+            margin: 4px 0px 0px -24px;
+        }
+        /* end style options */
+
+
     </style>
 </head>
 <body ng-controller="mainApp">
@@ -15,25 +47,39 @@
     <div class="page-header">
         <h1>{{title}}</h1>
     </div>
+
+
     <div class="page-header">
-        <input type="text" ng-model="newMonth" >
-        <input type="button" class="btn btn-info" value="add new" ng-click="addNewMonth(newMonth); newMonth = '';" />
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label>Add new option</label>
+                        <input type="text" ng-model="newMonth" class="form-control">
+                    </div>
+                    <input type="button" class="btn btn-info" value="add new" ng-click="addNewMonth(newMonth); newMonth = '';" />
+
+                </div>
+
+            </div>
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-lg-10 col-lg-offset-2">
+        <div class="col-md-10 col-md-offset-1">
             <form>
 
-                <div class="row">
-                    <div class="col-lg-4">
+                <div class="row containerExample">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label for="multiSelectCountries1">Without ng-options and placeholder</label>
-                            <select id="multiSelectCountries1" class="form-control"
-                                    ng-model="noOptionsCountries1"
+                            <label for="multiSelectCountries0">Without ng-options and with placeholder</label>
+                            <select id="multiSelectCountries0" class="form-control"
+                                    ng-model="noOptionsCountries0"
                                     ng-multi-select
                                     ng-multi-select-single="true"
                                     multiple="multiple"
-                                    ng-multi-select-placeholder="this is a placeholder"
+                                    ng-multi-select-placeholder="This is a placeholder"
                                     >
                               <option value="AA" selected>AA</option>
                               <option value="AB" >AB</option>
@@ -42,53 +88,57 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-4" >
-                        <pre>{{ noOptionsCountries1 | json}}</pre>
+                    <div class="col-md-6" >
+                        <pre>{{ noOptionsCountries0 | json }}</pre>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-4">
+                <div class="row containerExample">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label for="multiSelectCountries1">Countries: selecting objects (Without filter)</label>
+                            <label for="multiSelectCountries1">
+                                Countries: selecting objects (With select all text and placeholder)
+                            </label>
                             <select id="multiSelectCountries1" class="form-control"
                                     ng-model="countries1"
                                     ng-options="item as item.name for item in countries track by item.id"
                                     ng-multi-select
                                     ng-multi-select-track="countries"
-                                    ng-multi-select-filter="false"
+                                    ng-multi-select-select-all-text="Select All Countries"
+                                    ng-multi-select-placeholder="Select the countries"
                                     multiple="multiple"
                                     >
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-4" >
-                        <pre>{{ countries1 | json}}</pre>
+                    <div class="col-md-6" >
+                        <pre>{{ countries1 | json }}</pre>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-4">
+                <div class="row containerExample">
+                    <div class="col-md-6">
                         <div class="form-group">
-                            <label for="multiSelectCountries2">Countries: selecting just object id (Single selection)</label>
+                            <label for="multiSelectCountries2">Countries: selecting just object id (Single selection and without filter)</label>
                             <select id="multiSelectCountries2" class="form-control"
                                     ng-model="countries2"
                                     ng-options="item.id as item.name for item in countries"
                                     ng-multi-select
                                     ng-multi-select-track="countries"
                                     ng-multi-select-single="true"
+                                    ng-multi-select-filter="false"
                                     multiple="multiple"
                                     >
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-4" >
+                    <div class="col-md-6" >
                         <pre>{{ countries2 | json}}</pre>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-4">
+                <div class="row containerExample">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="multiSelectCountries3">Countries: with some objects selected</label>
                             <select id="multiSelectCountries3" class="form-control"
@@ -102,13 +152,13 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-4" >
+                    <div class="col-md-6" >
                         <pre>{{ countries3 | json}}</pre>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-4">
+                <div class="row containerExample">
+                    <div class="col-md-6">
                         <div class="form-group">
                             <label for="multiSelectCountries4">Countries: with some id's selected</label>
                             <select id="multiSelectCountries4" class="form-control"
@@ -122,7 +172,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-4" >
+                    <div class="col-md-6" >
                         <pre>{{ countries4 | json}}</pre>
                     </div>
                 </div>

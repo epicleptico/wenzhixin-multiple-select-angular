@@ -7,6 +7,7 @@
 
     $scope.countries = countries;
 
+    $scope.countries0 = undefined;
     $scope.countries1 = [];
     $scope.countries2 = [];
     $scope.countries3 = [$scope.countries[2], $scope.countries[6]];
