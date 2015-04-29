@@ -4,9 +4,15 @@
 # or operating system, you probably want to add a global ignore instead:
 # git config --global core.excludesfile ~/.gitignore_global
 
+#Ignore node_modules
+node_modules/
+node_modules/*
+
 #Ignore phpStorm files
 .idea
 
 #Ignore lib files
 lib/
 lib/*
+
+#Ignore dist files
