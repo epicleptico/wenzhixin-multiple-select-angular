@@ -21,4 +21,4 @@ Quick example
 Example
 -------
 
-[plunkr](http://plnkr.co/edit/e9vuq5yW5to2Em0EX3Fa?p=preview)
+[plunkr](http://plnkr.co/edit/e9vuq5yW5to2Em0EX3Fa?p=preview) - Updated to v.0.1.6
