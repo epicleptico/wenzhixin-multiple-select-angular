@@ -42,6 +42,28 @@
       if(iAttrs.ngMultiSelectIsOpen)      { opts.isOpen = iAttrs.ngMultiSelectIsOpen.toLowerCase() === 'true'; }
       if(iAttrs.ngMultiSelectSelectAllText)  { opts.selectAllText = iAttrs.ngMultiSelectSelectAllText; }
       if(iAttrs.ngMultiSelectAllSelected) { opts.allSelected = iAttrs.ngMultiSelectAllSelected; }
+      if(iAttrs.ngMultiSelectStyler)      { opts.styler = $scope.$eval(iAttrs.ngMultiSelectStyler); }
+
+      /**
+       * if true hide empty option and call styler
+       */
+      if(iAttrs.ngMultiSelectHideEmptyOption) {
+
+        opts.styler = function(value) {
+
+          var initialTxt = '';
+
+          if(iAttrs.ngMultiSelectStyler) {
+            initialTxt += $scope.$eval(iAttrs.ngMultiSelectStyler)(value);
+          }
+
+          if(value.trim() == '') {
+            initialTxt += ';display:none;';
+          }
+
+          return initialTxt;
+        }
+      }// hideEmptyOption
 
       jElement.multipleSelect(opts);
 
