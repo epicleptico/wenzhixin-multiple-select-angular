@@ -20,6 +20,7 @@
         onClick: triggerChange,
         onCheckAll: triggerChange,
         onUncheckAll: triggerChange,
+        onOptgroupClick: triggerChange,
         filter: true,
         single: false,
         placeholder: '',
