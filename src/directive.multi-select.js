@@ -85,7 +85,12 @@
       }
 
       //This helps setting up the value on init
-      $timeout(refreshMultipleSelect, 50);
+      refreshMultipleSelect();
+      
+      //If there is ngModel, we must watch changes and refresh em
+      if(iAttrs.ngModel) {
+        $scope.$watch(iAttrs.ngModel, refreshMultipleSelect);
+      }
     }
 
     return {
